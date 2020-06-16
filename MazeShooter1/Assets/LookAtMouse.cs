@@ -19,6 +19,6 @@ public class LookAtMouse : MonoBehaviour
         var playerToMousePosition = mousePosWorld - transform.position;
         playerToMousePosition.z = 0;
 
-        transform.right = playerToMousePosition;
+        transform.up = playerToMousePosition;
     }
 }
