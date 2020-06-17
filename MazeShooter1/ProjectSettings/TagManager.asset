@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - walls
   layers:
   - Default
   - TransparentFX
@@ -13,11 +14,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player_Layer
+  - Bullet_Layer
+  - Frame_Layer
+  - Obstackle_Layer
+  - Enemy_Layer
   - 
   - 
   - 

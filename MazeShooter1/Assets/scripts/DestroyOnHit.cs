@@ -19,8 +19,17 @@ public class DestroyOnHit : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
        
-        if(other.tag != "Player") 
+        if(other.tag != "player" && other.tag != "walls") 
+        {  
             Destroy(this.gameObject);
             Destroy(other.gameObject);
+        }
+        
+        if(other.tag == "walls")
+        {
+            Destroy(this.gameObject);
+        }
     }
+
+    
 }
