@@ -6,14 +6,16 @@ public class EnemyAi : MonoBehaviour
 
 {
 
-    public float speed = 10;
-    private string currentState = "patrol";
+    public float speed = 10; 
     public Transform waypoint1;
     public Transform waypoint2;
     public Transform waypoint3;
-    public float range = 15;
-    private Transform nextWaypoint;
+    public float range = 15; 
     public LayerMask mask;
+    
+    private string currentState = "patrol";
+    private Transform nextWaypoint;
+    
     // Start is called before the first frame update
     void Start()
     {
