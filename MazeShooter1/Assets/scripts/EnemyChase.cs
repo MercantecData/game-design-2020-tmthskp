@@ -5,35 +5,51 @@ using UnityEngine;
 public class EnemyChase : MonoBehaviour
 {
 
-    public Transform Player;
-    int MoveSpeed = 4;
-    int MaxDist = 10;
-    int MinDist = 5;
-    public LayerMask Mask;
+    public float speed;
+    public float stoppingDistance;
+    public float retreatDistance;
+    public float startTimeBtwShots;
+    public GameObject projectile;
+
+    private float timeBtwShots;
+    private Transform player;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        timeBtwShots = startTimeBtwShots;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(Player);
-
-        if (Vector2.Distance(transform.position, Player.position) >= MinDist)
+        if (Vector2.Distance(transform.position, player.position) > stoppingDistance) // moves to player
         {
-
-            transform.position += transform.forward * MoveSpeed * Time.deltaTime;
-
-
-
-            if (Vector2.Distance(transform.position, Player.position) <= MaxDist)
-            {
-                //Here Call any function U want Like Shoot at here or something
-            }
-
+            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime); 
         }
+        else if (Vector2.Distance(transform.position, player.position) < stoppingDistance && Vector2.Distance(transform.position, player.position) > retreatDistance) // stop distance to player
+        {
+            transform.position = this.transform.position;
+        }
+
+        else if (Vector2.Distance(transform.position, player.position) < retreatDistance) // retreat from player
+        {
+            transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
+        }
+
+
+        if (timeBtwShots <= 0) // start shooting at player
+        {
+            Instantiate(projectile, transform.position, Quaternion.identity);
+            timeBtwShots = startTimeBtwShots;
+        }
+        
+        else 
+        {
+            timeBtwShots -= Time.deltaTime; 
+        }
+        
     }
+
 }

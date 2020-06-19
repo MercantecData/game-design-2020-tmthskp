@@ -79,8 +79,6 @@ public class EnemyAi : MonoBehaviour
             inRange = true;
         }
 
-
-
         var linecast = Physics2D.Linecast(transform.position, targetGO.transform.position, mask);
         if (linecast.transform == null)
         {
@@ -89,4 +87,6 @@ public class EnemyAi : MonoBehaviour
 
         return inRange && inVision;
     }
+
+
 }

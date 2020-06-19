@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - walls
+  - Boss
+  - Flag
+  - Enemy
+  - projectile
   layers:
   - Default
   - TransparentFX
