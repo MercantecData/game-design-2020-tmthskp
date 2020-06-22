@@ -5,7 +5,8 @@ using UnityEngine;
 public class DestroyOnHit : MonoBehaviour
 {
 
-   // public GameManager gameManager;
+    // public GameManager gameManager;
+    //public Animator trigger;
 
     // Start is called before the first frame update
     void Start()
