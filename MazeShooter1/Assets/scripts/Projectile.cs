@@ -11,6 +11,8 @@ public class Projectile : MonoBehaviour
     private Transform player;
     private Vector2 target;
 
+    [SerializeField] Transform spawnPoint;
+
 
     // Start is called before the first frame update
     void Start()
@@ -33,26 +35,42 @@ public class Projectile : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            DestroyProjectile();
-            Destroy(other.gameObject);
-           
-           
-        }
 
-        if (other.tag == "walls")
+    private void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+
+        if (hitInfo.tag != "Boss" && hitInfo.tag != "walls")
         {
             Destroy(this.gameObject);
+            //Destroy(hitInfo.gameObject);
         }
 
+        if (hitInfo.tag == "walls")
+        {
+            Destroy(this.gameObject);
+
+        }
+
+        if (hitInfo.tag == "Enemy")
+        {
+            Destroy(this.gameObject);
+            Debug.Log("Enemy Down!!! Shoot the Flag to win");
+        }
+
+        if (hitInfo.tag == "player")
+        {
+            Debug.Log("YOU Died!! Try Again");
+            //Destroy(this.gameObject);       
+        }
+
+        if (hitInfo.transform.CompareTag("Player"))
+            hitInfo.transform.position = spawnPoint.position;
+            
     }
 
     void DestroyProjectile()
     {
-        Destroy(gameObject);
+        Destroy(this.gameObject);
         
     }
 

@@ -23,8 +23,8 @@ TagManager:
   - Frame_Layer
   - Obstackle_Layer
   - Enemy_Layer
-  - 
-  - 
+  - EndTrigger_Layer
+  - EnemyShoot_Layer
   - 
   - 
   - 
