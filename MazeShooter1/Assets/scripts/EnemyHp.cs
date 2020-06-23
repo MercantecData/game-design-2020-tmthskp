@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyHp : MonoBehaviour
 {
-    public int health = 100;
+    public int health = 1;
     public Animator trigger;
 
     public void TakeDamage(int damage)
@@ -22,7 +22,6 @@ public class EnemyHp : MonoBehaviour
     void Die()
     {
         trigger.SetTrigger("OnDeath");
-        //Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

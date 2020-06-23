@@ -5,9 +5,6 @@ using UnityEngine;
 public class DestroyOnHit : MonoBehaviour
 {
 
-    // public GameManager gameManager;
-    //public Animator trigger;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -38,23 +35,15 @@ public class DestroyOnHit : MonoBehaviour
         if (hitInfo.tag == "Enemy")
         {
             Destroy(this.gameObject);
-            Debug.Log("Enemy Down!!! Shoot the Flag to win");
+            Debug.Log("Enemy Down!!! Get Flag to win");
         }
 
         if (hitInfo.tag == "Boss")
         {
             Destroy(this.gameObject);
-            Debug.Log("BOSS DOWN GREAT!!! Now Go Shoot The Flag to Win.");
-        }
-
-        if (hitInfo.tag == "Flag")
-        {
-            Destroy(this.gameObject);
-            Debug.Log("GAME WON!!!!!! You Got The Flag!!!");
-           // gameManager.Win();
+            Debug.Log("BOSS DOWN GREAT!!! Get Flag to Win.");
         }
 
     }
-
     
 }

@@ -42,7 +42,7 @@ public class Projectile : MonoBehaviour
         if (hitInfo.tag != "Boss" && hitInfo.tag != "walls")
         {
             Destroy(this.gameObject);
-            //Destroy(hitInfo.gameObject);
+            
         }
 
         if (hitInfo.tag == "walls")
@@ -54,13 +54,13 @@ public class Projectile : MonoBehaviour
         if (hitInfo.tag == "Enemy")
         {
             Destroy(this.gameObject);
-            Debug.Log("Enemy Down!!! Shoot the Flag to win");
+            //Debug.Log("Enemy Down!!! Get The Flag to Win");
         }
 
         if (hitInfo.tag == "player")
         {
             Debug.Log("YOU Died!! Try Again");
-            //Destroy(this.gameObject);       
+           
         }
 
         if (hitInfo.transform.CompareTag("Player"))
