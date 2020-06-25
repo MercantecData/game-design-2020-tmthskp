@@ -15,12 +15,13 @@ public class Shoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        
         if (Input.GetMouseButtonDown(0))
         {
+            
+            //FindObjectOfType<AudioManager>().Play("PlayerShoot"); // ShootSound
             //Shoot a bullet
-
-           // FindObjectOfType<AudioManager>().Play("PlayerShoot"); // ShootSound
-
             GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
             Rigidbody2D rigidbody = bullet.GetComponent<Rigidbody2D>();
             rigidbody.velocity = bullet.transform.up * 10;
