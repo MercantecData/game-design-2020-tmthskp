@@ -29,18 +29,21 @@ public class DestroyOnHit : MonoBehaviour
         if(hitInfo.tag == "walls")
         {
             Destroy(this.gameObject);
-           
+            FindObjectOfType<AudioManager>().Play("HitWall"); // ShootSound
+
         }
 
         if (hitInfo.tag == "Enemy")
         {
             Destroy(this.gameObject);
+            FindObjectOfType<AudioManager>().Play("EnemyHit"); // ShootSound
             Debug.Log("Enemy Down!!! Get Flag to win");
         }
 
         if (hitInfo.tag == "Boss")
         {
             Destroy(this.gameObject);
+            FindObjectOfType<AudioManager>().Play("EnemyHit"); // ShootSound
             Debug.Log("BOSS DOWN GREAT!!! Get Flag to Win.");
         }
 

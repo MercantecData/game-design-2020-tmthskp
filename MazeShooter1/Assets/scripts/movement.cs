@@ -40,6 +40,8 @@ public class movement : MonoBehaviour
 
         if (collision.tag == "projectile")
         {
+            
+
             SceneManager.LoadScene("EndLevel");
         }
 

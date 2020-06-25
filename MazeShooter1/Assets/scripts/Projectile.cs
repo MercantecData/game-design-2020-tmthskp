@@ -60,7 +60,6 @@ public class Projectile : MonoBehaviour
         if (hitInfo.tag == "player")
         {
             Debug.Log("YOU Died!! Try Again");
-           
         }
 
         if (hitInfo.transform.CompareTag("Player"))

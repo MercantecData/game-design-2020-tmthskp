@@ -21,4 +21,11 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("GameLevel_1");
     }
+
+    public void Quit()
+    {
+        Debug.Log("QUIT");
+        Application.Quit();
+    }
+
 }
