@@ -5,6 +5,8 @@ using UnityEngine;
 public class DestroyOnHit : MonoBehaviour
 {
 
+    public GameObject Particle_Enemy;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +40,8 @@ public class DestroyOnHit : MonoBehaviour
             Destroy(this.gameObject);
             FindObjectOfType<AudioManager>().Play("EnemyHit"); // ShootSound
             Debug.Log("Enemy Down!!! Get Flag to win");
+            Instantiate(Particle_Enemy, transform.position, Quaternion.identity);
+
         }
 
         if (hitInfo.tag == "Boss")
@@ -45,6 +49,7 @@ public class DestroyOnHit : MonoBehaviour
             Destroy(this.gameObject);
             FindObjectOfType<AudioManager>().Play("EnemyHit"); // ShootSound
             Debug.Log("BOSS DOWN GREAT!!! Get Flag to Win.");
+            Instantiate(Particle_Enemy, transform.position, Quaternion.identity);
         }
 
     }
